@@ -15,8 +15,6 @@ RUN curl -fSL "$ERDDAP_WAR_URL" -o /root/erddap.war && \
 COPY files/javaopts.sh $CATALINA_HOME/bin/javaopts.sh
 COPY files/setup.xml $CATALINA_HOME/content/erddap/setup.xml
 
-RUN chmod +x /usr/local/bin/wgrib2
-
 ENV ERDDAP_SCRATCH /erddap
 ENV DATASET_SRC /data
 RUN mkdir -p $ERDDAP_SCRATCH $DATASET_SRC
